@@ -175,7 +175,7 @@ a
 					transition: all 1s ease-in-out
 					content: ""
 					margin: auto 
-					margin-top: -42.5px
+					margin-top: -42px
 					margin-right: 0px
 					border-radius: 2px
 					width: 20px
@@ -187,11 +187,11 @@ a
 					color: pink
 					&::after
 						height: 3px
-						margin-right: 24px
+						margin-right: 25px
 						transform: rotate(20deg)
 					&::before
 						height: 3px
-						margin-left: 24px
+						margin-left: 25px
 						transform: rotate(-20deg)
 
 
@@ -199,10 +199,18 @@ a
 		position: absolute
 		bottom: $border
 		width: 100%
-		height: 35px
-		// background-color: white
+		height: auto
+		background-color: white
 		#clients-content
-			display: none
+			display: flex
+			.wr
+				flex-wrap: wrap
+				justify-content: baseline
+				.clients
+					width: 300px
+					height: 100px
+					margin: 30px	
+					object-fit: contain
 
 
 @import "media" // Всегда в конце
