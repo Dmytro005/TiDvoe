@@ -63,6 +63,20 @@ section
 	margin: 0
 	background-color: black
 
+.shadow
+	position: absolute
+	height: 100%
+	width: 100%
+	top: 0
+	z-index: 1
+	transition: all 0.5s 
+	background-color: rgba(0,0,0,0)
+	display: none
+
+.shadow-show
+	background-color: rgba(0,0,0,0.8)	
+	display: block
+
 #logo
 	width: 68px
 	height: 68px
@@ -78,7 +92,7 @@ h1
 
 .about-us-text
 	font-family: $Com
-	font-size: 18px
+	font-size: 16px
 	font-weight: 300
 p
 	font-family: $Com
@@ -99,7 +113,7 @@ a
 
 .btn
 	font-family: $Com
-	font-size: 24px
+	font-size: 20px
 	font-weight: 700
 	padding: 5px 29px
 	border-radius: 12px
@@ -148,69 +162,93 @@ a
 				display: flex
 				flex-direction: column
 				margin: 0 50px
+
 	#clients-box
-		#clients-label
-			text-align: center
-			width: auto
-			.label
-				font-size: 24px
-				display: inline-block
-				transition: all 1s
-				cursor: pointer
-
-				&::before
-					pointer-events: none
-					transition: all 1s ease-in-out
-					content: ""
-					width: 20px
-					height: 0px
-					background-color: white
-					display: block
-					margin: auto
-					margin-left: 0px
-					border-radius: 2px
-					transform: rotate(-380deg)
-				&::after
-					pointer-events: none
-					transition: all 1s ease-in-out
-					content: ""
-					margin: auto 
-					margin-top: -42px
-					margin-right: 0px
-					border-radius: 2px
-					width: 20px
-					height: 0px
-					background-color: white
-					display: block
-					transform: rotate(380deg)
-				&:hover
-					color: pink
-					&::after
-						height: 3px
-						margin-right: 25px
-						transform: rotate(20deg)
-					&::before
-						height: 3px
-						margin-left: 25px
-						transform: rotate(-20deg)
-
-
-
+		z-index: 2
 		position: absolute
 		bottom: $border
 		width: 100%
-		height: auto
-		background-color: white
+		transition: all 0.5s
+		// height: 0px
+		// background-color: white
+		background-color: rgba(0,0,0,0)
+
+		#clients-label
+			text-align: center
+			width: auto
+			margin: 10px 0px
+			.label
+				font-size: 20px
+				display: inline-block
+				transition: all 1s
+				cursor: pointer				
+
+				&::before
+					content: ""
+					background-color: white
+					width: 15px
+					height: 2px
+					margin-left: 20px
+					margin-bottom: 2px
+					display: block
+					margin-right: 25px
+					border-radius: 2px
+					transform: rotate(-20deg)
+					pointer-events: none
+					transition: all 0.5s ease-in-out
+
+				&::after
+					content: ""
+					background-color: white
+					width: 15px
+					height: 2px
+					display: block
+					margin-left: 34px
+					margin-top: -37px
+					border-radius: 2px
+					transform: rotate(20deg)
+					pointer-events: none
+					transition: all 0.5s ease-in-out
+						
+				
 		#clients-content
-			display: flex
+			display: none
 			.wr
+				width: auto
+				display: flex
 				flex-wrap: wrap
-				justify-content: baseline
+				justify-content: space-around
+				align-items: none
+				margin-bottom: 20px
 				.clients
-					width: 300px
+					width: 250px
 					height: 100px
 					margin: 30px	
 					object-fit: contain
+					filter: grayscale(100%)
+					transition: all 1s ease-in-out
+					&:hover
+						filter: grayscale(0%)
+
+.clients-box-opened
+	// height: inherit
+	background-color: white !important
+
+.clients-label-opened
+	color: black !important
+	.label
+		&::before
+			background-color: black !important
+			transform: rotate(20deg) !important
+			margin-bottom: -35px !important
+		&::after
+			background-color: black !important
+			transform: rotate(-20deg) !important
+			margin-top: 0px !important
+
+.clients-content-opened
+	display: flex !important
+
 
 
 @import "media" // Всегда в конце
