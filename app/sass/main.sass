@@ -130,6 +130,12 @@ a
 	flex-direction: column
 	justify-content: space-between
 
+.label
+	font-size: 20px
+	display: inline-block
+	transition: all 1s
+	cursor: pointer
+
 // Page styles
 .wr
 	border-right: 1px solid white
@@ -178,11 +184,6 @@ a
 			width: auto
 			margin: 10px 0px
 			.label
-				font-size: 20px
-				display: inline-block
-				transition: all 1s
-				cursor: pointer				
-
 				&::before
 					content: ""
 					background-color: white
@@ -251,13 +252,38 @@ a
 	display: flex !important
 
 
-
 #projects-box
+	// background-color: white
+
+	position: absolute
+	display: flex
+	height: 100vh
+	right: $border
+	z-index: 3
 	#projects-label
+		margin: auto
 		transform: rotate(-90deg)
 		#projects
-
+			color: red
 	#projects-content
+		// width: auto
+		// display: flex
+
+		display: none
+		height: 100vh
+		flex-direction: column
+		align-items: center
+		margin-right: 85px
+		.projects
+			width: 120px
+			height: 120px
+			margin: 20px
+
+.projects-box-opened
+	background-color: white !important
+	.projects-content-opened
+		width: auto !important
+		display: flex !important
 
 
 
