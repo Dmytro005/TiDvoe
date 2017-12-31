@@ -1,5 +1,16 @@
 $(function() {
+	// setTimeout(func / code, delay)
 
+	//Start animation
+	setTimeout( function(){
+			$("h1").addClass('h1-show');
+		},1000);
+
+	setTimeout( function(){
+				$(".about-us-text").addClass('about-us-text-show');
+			},1000);
+
+	//Cliens
 	$("#clients").click(function(){
 		$("#clients-content").slideToggle();
 
@@ -14,6 +25,7 @@ $(function() {
   	else if ($("#projects-box").css("zIndex") == 1) { $("#projects-box").css("zIndex","3")}
 	});
 
+	//Projects bar
 	$("#projects").click(function() {
 		//Toggle shadow to front
 
@@ -26,11 +38,14 @@ $(function() {
   	if( $("#projects-box").width().toFixed(0) == 85){
   		$("#projects-box").animate({width: 325},50, function() {
   			$("#projects-content").toggleClass("projects-content-opened");
+  			$("#projects").toggleClass("projects-opened");
+
   		});
   	}
   	else if($("#projects-box").width().toFixed(0) == 325){
-			$("#projects-content").toggleClass("projects-content-opened");
 			$("#projects-box").animate({width: 85},50,function() {
+			$("#projects-content").toggleClass("projects-content-opened");
+			$("#projects").toggleClass("projects-opened");
 			});
   	}
 		
