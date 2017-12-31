@@ -1,4 +1,4 @@
-<h1>OptimizedHTML - Start HTML Template</h1>
+<!-- <h1>OptimizedHTML - Start HTML Template</h1>
 
 <p>
 	<img src="https://raw.githubusercontent.com/agragregra/optimizedhtml-start-template/master/app/img/preview.jpg" alt="Start HTML Template">
@@ -46,3 +46,4 @@
 	<li>All jQuery libraries CSS styles placed in <strong>app/sass/_libs.sass</strong>;</li>
 	<li>Rename <strong>ht.access</strong> to <strong>.htaccess</strong> before place it in your web server. This file contain rules for files caching on web server.</li>
 </ol>
+ -->
