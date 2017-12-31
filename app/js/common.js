@@ -1,66 +1,71 @@
 $(function() {
 	// setTimeout(func / code, delay)
 
-	//Start animation
+	//Start loading page animations
+
+	//Logo
 	setTimeout( function(){
-			$("h1").addClass('h1-show');
-		},1000);
+		$("#logo").addClass('logo-show');
+	},600);
+
+	// "Who we are"
+	setTimeout( function(){
+		$("h1").addClass('h1-show');
+	},800);
+
+	// "About us text"
+	setTimeout( function(){
+		$(".about-us-text").addClass('about-us-text-show');
+	},1600);
 
 	setTimeout( function(){
-				$(".about-us-text").addClass('about-us-text-show');
-			},1000);
+		$("#contacts").addClass('contacts-show');
+		$("#projects-box").addClass('contacts-show');
+	},2800);
 
-	//Cliens
+	//Cliens menu
 	$("#clients").click(function(){
 		$("#clients-content").slideToggle();
 
 		$(".shadow").toggleClass("shadow-show");
+		$(".shadow").toggleClass("shadow-clients");
 		
 		$("#clients-box").toggleClass("clients-box-opened");
 		$("#clients-label").toggleClass("clients-label-opened");
 		$("#clients-content").toggleClass("clients-content-opened");
 
 		//Toggle project box section to back
-  	if ($("#projects-box").css("zIndex") == 3) { $("#projects-box").css("zIndex","1") }
-  	else if ($("#projects-box").css("zIndex") == 1) { $("#projects-box").css("zIndex","3")}
+  	
 	});
 
 	//Projects bar
 	$("#projects").click(function() {
+		var closedWidth = $("#projects-box").width().toFixed(0);
 		//Toggle shadow to front
-
 		$(".shadow").toggleClass("shadow-show");
 
 		//Bring Shadow to front
-  	if ($(".shadow").css("zIndex") == 1) { $(".shadow").css("zIndex","2") }
-  	else if ($(".shadow").css("zIndex") == 2) {$(".shadow").css("zIndex","1") }
+		$(".shadow").toggleClass("shadow-projects");
+	  
+	  	//Open
+	  	if( closedWidth == 84){
+	  		$("#projects-box").animate({width: 325},50, function() {
+	  			$("#projects-content").toggleClass("projects-content-opened");
+	  			$("#projects").toggleClass("projects-opened");
+	  			console.log("Open");
+	  		});
+	  	}
 
-  	if( $("#projects-box").width().toFixed(0) == 85){
-  		$("#projects-box").animate({width: 325},50, function() {
-  			$("#projects-content").toggleClass("projects-content-opened");
-  			$("#projects").toggleClass("projects-opened");
+	  	//Close
+	  	else if( closedWidth == 324){
+				$("#projects-box").animate({width: 85},50,function() {
+				$("#projects-content").toggleClass("projects-content-opened");
+				$("#projects").toggleClass("projects-opened");
+				});
+	  	}
 
-  		});
-  	}
-  	else if($("#projects-box").width().toFixed(0) == 325){
-			$("#projects-box").animate({width: 85},50,function() {
-			$("#projects-content").toggleClass("projects-content-opened");
-			$("#projects").toggleClass("projects-opened");
-			});
-  	}
-		
-
+		//Toogle color (JQuery can't animate color)
 		$("#projects-box").toggleClass("projects-box-opened");
-
-
-		// if (zIndex == 1) { 
-		// 		$(".shadow").css("zIndex","2") 
-		// 	}
-  // 	else if (zIndex == 2) {
-  // 			$(".shadow").css("zIndex","1") 
-  // 		}
-
-
 
 	});
 

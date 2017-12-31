@@ -44,7 +44,7 @@ body
 	position: relative
 	line-height: 1.65
 	font-family: $Com
-	overflow-x: hidden
+	overflow: hidden
 	color: white
 	opacity: 1
 	margin: 0
@@ -68,22 +68,31 @@ section
 	height: 100%
 	width: 100%
 	top: 0
-	z-index: 1
 	transition: all 1s 
 	background-color: rgba(0,0,0,0)
-	display: none
+	visibility: hidden
 
 .shadow-show
 	background-color: rgba(0,0,0,0.8)	
-	display: block
+	visibility: visible
 
+.shadow-projects
+	z-index: 2
+.shadow-clients
+	z-index: 1
+	
 #logo
 	width: 68px
 	height: 68px
 	margin: 25px
 	margin-left: 0
+	transition: all 1s ease-in
+	opacity: 0
+.logo-show
+	opacity: 1 !important
 
 h1
+	transition: all 2s ease-in-out
 	font-family: "Heading", sans-serif
 	letter-spacing: 200px
 	line-height: 10px
@@ -91,16 +100,15 @@ h1
 	font-size: 80px
 	font-weight: 700
 	margin-bottom: 20px
-	transition: all 4s ease-in-out
 	span
 		white-space: nowrap
-
 .h1-show
 	letter-spacing: 5px
 	line-height: 90px
 	opacity: 1
 
 .about-us-text
+	transition: all 2s ease-in-out
 	font-family: $Com
 	margin-left: -80vh
 	font-size: 16px
@@ -109,13 +117,12 @@ h1
 	line-height: 120px
 	letter-spacing: 100px
 	white-space: nowrap
-	transition: all 4s ease-in-out
-
 .about-us-text-show
 	line-height: 25px
 	letter-spacing: 0px
 	opacity: 1
 	margin: 0
+
 p
 	font-family: $Com
 	font-size: 13px
@@ -145,6 +152,7 @@ a
 		border: 1px solid black
 		color: black
 		background-color: white
+
 .wr
 	height: 100%
 	margin: 0px $border 0px $border
@@ -158,9 +166,8 @@ a
 	transition: all 1s
 	cursor: pointer
 
-// Page styles
-.wr
-	border-right: 1px solid white
+//Page styles
+.wr	
 	#main
 		flex-direction: column
 		justify-content: space-between
@@ -176,7 +183,9 @@ a
 	bottom: 0
 	width: 100%
 	border-top: 1px solid white
-	height: $border		
+	height: $border
+	transition: $borderAppear
+	transform: translateY(250px)
 	.wr
 		width: 100%
 		border-right: 0px solid white
@@ -192,7 +201,7 @@ a
 				margin: 0 50px
 
 	#clients-box
-		z-index: 2
+		z-index: 3
 		position: absolute
 		bottom: $border
 		width: 100%
@@ -206,33 +215,32 @@ a
 			width: auto
 			margin: 10px 0px
 			.label
-				&::before
-					content: ""
-					background-color: white
-					width: 15px
-					height: 2px
-					margin-left: 21px
-					margin-bottom: 2px
-					display: block
-					margin-right: 25px
-					border-radius: 2px
-					transform: rotate(-20deg)
-					pointer-events: none
-					transition: all 0.5s ease-in-out
+				// &::before
+				// 	content: ""
+				// 	background-color: white
+				// 	width: 15px
+				// 	height: 2px
+				// 	margin-left: 21px
+				// 	margin-bottom: 2px
+				// 	display: block
+				// 	margin-right: 25px
+				// 	border-radius: 2px
+				// 	transform: rotate(-20deg)
+				// 	pointer-events: none
+				// 	transition: all 0.5s ease-in-out
 
-				&::after
-					content: ""
-					background-color: white
-					width: 15px
-					height: 2px
-					display: block
-					margin-left: 34px
-					margin-top: -37px
-					border-radius: 2px
-					transform: rotate(20deg)
-					pointer-events: none
-					transition: all 0.5s ease-in-out
-						
+				// &::after
+				// 	content: ""
+				// 	background-color: white
+				// 	width: 15px
+				// 	height: 2px
+				// 	display: block
+				// 	margin-left: 34px
+				// 	margin-top: -37px
+				// 	border-radius: 2px
+				// 	transform: rotate(20deg)
+				// 	pointer-events: none
+				// 	transition: all 0.5s ease-in-out
 				
 		#clients-content
 			display: none
@@ -253,7 +261,11 @@ a
 					&:hover
 						filter: grayscale(0%)
 
-//Active styles
+.contacts-show
+	transform: translateY(0px) !important
+
+//Opened clients
+
 .clients-box-opened
 	// height: inherit
 	background-color: white !important
@@ -273,10 +285,11 @@ a
 .clients-content-opened
 	display: flex !important
 
-////////////////////////////////////////////////////////
+//OPened projects
 #projects-box
-	transition: all 0.5s ease-in-out
-	// background-color: white
+	border-right: 1px solid white
+	transition: $borderAppear
+	transform: translateX(250px)
 	width: 85px
 	position: absolute
 	display: flex
@@ -284,7 +297,6 @@ a
 	right: $border
 	z-index: 3
 	#projects-label
-
 		margin: auto
 		transform: rotate(-90deg)
 		#projects
@@ -298,7 +310,6 @@ a
 		align-items: center
 		margin-right: 85px
 		.projects
-			// transition: 1s all 50ms ease-in-out
 			width: 120px
 			height: 120px
 			margin: 20px
@@ -319,6 +330,7 @@ a
 .projects-opened
 	color: black !important
 
-
+.projects-box-show
+	transform: translateX(0px)
 
 @import "media" // Всегда в конце
