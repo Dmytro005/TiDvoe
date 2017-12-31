@@ -69,7 +69,7 @@ section
 	width: 100%
 	top: 0
 	z-index: 1
-	transition: all 0.5s 
+	transition: all 1s 
 	background-color: rgba(0,0,0,0)
 	display: none
 
@@ -251,39 +251,48 @@ a
 .clients-content-opened
 	display: flex !important
 
-
+////////////////////////////////////////////////////////
 #projects-box
+	transition: all 0.5s ease-in-out
 	// background-color: white
-
+	width: 85px
 	position: absolute
 	display: flex
 	height: 100vh
 	right: $border
 	z-index: 3
 	#projects-label
+
 		margin: auto
 		transform: rotate(-90deg)
 		#projects
 			color: red
 	#projects-content
+		transition: all 50ms ease-in
 		// width: auto
 		// display: flex
-
-		display: none
+		display: flex
+		visibility: hidden
 		height: 100vh
 		flex-direction: column
 		align-items: center
 		margin-right: 85px
 		.projects
+			// transition: 1s all 50ms ease-in-out
 			width: 120px
 			height: 120px
 			margin: 20px
-
+			opacity: 0
+			visibility: hidden
 .projects-box-opened
 	background-color: white !important
-	.projects-content-opened
-		width: auto !important
-		display: flex !important
+
+.projects-content-opened
+	visibility: visible !important
+	.projects
+		transition: 1s all 50ms ease-in-out !important
+		visibility: visible !important
+		opacity: 1 !important
 
 
 
