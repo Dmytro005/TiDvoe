@@ -48,7 +48,7 @@ $(function() {
 		$(".shadow").toggleClass("shadow-projects");
 	  
 	  	//Open
-	  	if( closedWidth == 84){
+	  	if( closedWidth == 70){
 	  		$("#projects-box").animate({width: 325},50, function() {
 	  			$("#projects-content").toggleClass("projects-content-opened");
 	  			$("#projects").toggleClass("projects-opened");
@@ -57,8 +57,8 @@ $(function() {
 	  	}
 
 	  	//Close
-	  	else if( closedWidth == 324){
-				$("#projects-box").animate({width: 85},50,function() {
+	  	else if( closedWidth == 325){
+				$("#projects-box").animate({width: 70},50,function() {
 				$("#projects-content").toggleClass("projects-content-opened");
 				$("#projects").toggleClass("projects-opened");
 				});
