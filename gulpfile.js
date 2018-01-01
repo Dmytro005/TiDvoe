@@ -28,10 +28,10 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/js/common.min.js', // Всегда в конце
+		'app/js/common.min.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -65,7 +65,7 @@ gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
-	.pipe(cache(imagemin())) // Cache Images
+	//.pipe(cache(imagemin())) // Cache Images
 	.pipe(gulp.dest('dist/img')); 
 });
 
@@ -93,9 +93,9 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
-		password:  'userpassword',
+		host:      '44group.zzz.com.ua',
+		user:      'dmytro@44group.zzz.com.ua',
+		password:  'Dmytro005',
 		parallel:  10,
 		log: gutil.log
 	});
@@ -105,16 +105,16 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/path/to/folder/on/server'));
+	.pipe(conn.dest('/'));
 
 });
 
 gulp.task('rsync', function() {
 	return gulp.src('dist/**')
 	.pipe(rsync({
-		root: 'dist/',
-		hostname: 'username@yousite.com',
-		destination: 'yousite/public_html/',
+		root: '/',
+		hostname: '44group.zzz.com.ua',
+		destination: '/',
 		// include: ['*.htaccess'], // Скрытые файлы, которые необходимо включить в деплой
 		recursive: true,
 		archive: true,

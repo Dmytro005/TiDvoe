@@ -21,8 +21,9 @@ $(function() {
 	setTimeout( function(){
 		$("#contacts").addClass('contacts-show');
 		$("#clients-box").addClass('clients-box-show');
-		$("#projects-box").addClass('contacts-show');
-	},2800);
+		
+		$("#projects-box").addClass('projects-box-show');
+	},3600);
 
 	//Cliens menu
 	$("#clients").click(function(){

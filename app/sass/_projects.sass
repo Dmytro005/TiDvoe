@@ -1,11 +1,12 @@
 #projects-box
+	display: flex
+	visibility: hidden
 	transform: translateX(250px)
 	border-right: 1px solid white
 	transition: $borderAppear
 	box-sizing: content-box
 	width: 70px
 	position: absolute
-	display: flex
 	height: 100vh
 	top: 0
 	right: $border
@@ -49,4 +50,5 @@
 	color: black !important
 
 .projects-box-show
-	transform: translateX(0px)
+	visibility: visible !important
+	transform: translateX(0px) !important

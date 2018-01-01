@@ -151,6 +151,7 @@ a
 	border: 1px solid white
 	transition: all 1s
 	margin: 10px
+	white-space: nowrap
 	&:hover
 		border: 1px solid black
 		color: black
@@ -208,7 +209,10 @@ a
 				display: flex
 				flex-direction: column
 				margin: 0 50px
-	#store
+		.box
+			display: flex
+			flex-flow: row wrap
+			align-items: center
 
 .contacts-show
 	transform: translateY(0px) !important	
