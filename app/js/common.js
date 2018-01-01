@@ -6,12 +6,12 @@ $(function() {
 	//Logo
 	setTimeout( function(){
 		$("#logo").addClass('logo-show');
-	},600);
+	},500);
 
 	// "Who we are"
 	setTimeout( function(){
 		$("h1").addClass('h1-show');
-	},800);
+	},1000);
 
 	// "About us text"
 	setTimeout( function(){
@@ -20,12 +20,13 @@ $(function() {
 
 	setTimeout( function(){
 		$("#contacts").addClass('contacts-show');
+		$("#clients-box").addClass('clients-box-show');
 		$("#projects-box").addClass('contacts-show');
 	},2800);
 
 	//Cliens menu
 	$("#clients").click(function(){
-		$("#clients-content").slideToggle();
+		$("#clients-content").slideToggle("slow");
 
 		$(".shadow").toggleClass("shadow-show");
 		$(".shadow").toggleClass("shadow-clients");

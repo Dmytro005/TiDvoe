@@ -1,0 +1,60 @@
+#clients-box
+	z-index: 1
+	position: absolute
+	bottom: $border
+	width: 100%
+	transition: all 0.5s
+	transition: $borderAppear
+	transform: translateY(250px)
+	background-color: rgba(0,0,0,0)
+
+	#clients-label
+		text-align: center
+		width: auto
+		margin: 10px 0px
+	#clients-content
+		display: none
+		.wr
+			transition: all 1s ease-in-out
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			flex-direction: row
+			justify-content: space-around
+			align-items: none
+			opacity: 0
+			margin-bottom: 20px
+			.clients
+				width: 20%
+				height: 100px
+				margin: 30px	
+				object-fit: contain
+				filter: grayscale(100%)
+				transition: all 1s ease-in-out
+				&:hover
+					filter: grayscale(0%)
+
+//Opened clients
+.clients-box-show
+	transform: translateY(0px) !important
+
+.clients-box-opened
+	background-color: white !important
+	z-index: 3 !important
+
+.clients-label-opened
+	color: black !important
+	.label
+		&::before
+			background-color: black !important
+			transform: rotate(20deg) !important
+			margin-bottom: -35px !important
+		&::after
+			background-color: black !important
+			transform: rotate(-20deg) !important
+			margin-top: 0px !important
+
+.clients-content-opened
+	display: flex !important
+	.wr
+	    opacity: 1 !important

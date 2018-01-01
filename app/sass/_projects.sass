@@ -1,0 +1,52 @@
+#projects-box
+	transform: translateX(250px)
+	border-right: 1px solid white
+	transition: $borderAppear
+	box-sizing: content-box
+	width: 70px
+	position: absolute
+	display: flex
+	height: 100vh
+	top: 0
+	right: $border
+	z-index: 0
+	background-color: transparent	
+	#projects-label
+		margin: auto
+		transform: rotate(-90deg)
+		#projects
+			color: white
+	#projects-content
+		transition: all 50ms ease-in
+		display: flex
+		visibility: hidden
+		height: 100vh
+		flex-direction: column
+		align-items: center
+		margin-right: 85px
+		opacity: 0
+		.projects
+			width: 120px
+			height: 120px
+			margin: 20px
+			opacity: 0
+			visibility: hidden
+
+.projects-box-opened
+	z-index: 5 !important
+	background-color: white !important
+
+.projects-content-opened
+	visibility: visible !important
+	opacity: 1 !important
+	.projects
+		transition: 1s all 50ms ease-in-out !important
+		visibility: visible !important
+		opacity: 1 !important
+		color: white !important
+
+.projects-opened
+	color: black !important
+
+.projects-box-show
+	transform: translateX(0px)
