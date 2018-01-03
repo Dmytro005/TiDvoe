@@ -7,14 +7,78 @@
 	/**/
 
 
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
-
-
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	$border: 5vh
+	.wr
+		margin: 0px $border 0px $border
+
+	#logo
+		margin: 20px auto
+	.about-us-text
+		white-space: inherit
+		margin-left: 0vh
+
+	#main
+		height: 100vh - $border
+		.wr
+			.box
+				text-align: center
+
+	#store
+		margin: auto
+
+	#contacts
+		height: $border+10vh
+
+	#projects-box
+		right: 2vh
+
+	.projects-box-show
+		visibility: hidden !important
+
+	#clients-box
+		bottom: $border+10vh
+
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	$border: 10vh
+
+	.wr
+		margin: 0px $border 0px $border
+
+	#logo
+		margin: 20px auto
+	.about-us-text
+		white-space: inherit
+		margin-left: 0vh
+
+	#main
+		height: 100vh - $border
+		.wr
+			.box
+				text-align: center
+
+	#store
+		margin: auto
+
+	#contacts
+		height: $border+10vh
+
+	#projects-box
+		right: $border
+
+	#clients-box
+		bottom: $border+10vh
+
+
+
+
+
+
 
 
 /* Extra Small Devices, Phones */

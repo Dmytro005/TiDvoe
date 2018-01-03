@@ -25,6 +25,10 @@ $(function() {
 		$("#projects-box").addClass('projects-box-show');
 	},3600);
 
+	setTimeout( function(){
+		$("#store").addClass('store-show');
+	},3800);
+
 	//Cliens menu
 	$("#clients").click(function(){
 		$("#clients-content").slideToggle("slow");
